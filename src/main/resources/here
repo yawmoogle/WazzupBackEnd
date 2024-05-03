@@ -1,1 +1,11 @@
-testing
+spring.application.name=pod
+
+server.port = 8000
+
+### MYSQL DATABASE ###
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/fdmpod
+spring.datasource.username=root
+spring.datasource.password=<input password here>
+spring.jpa.database=mysql
+spring.jpa.hibernate.ddl-auto=create
