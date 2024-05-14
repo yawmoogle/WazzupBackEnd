@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -32,6 +33,17 @@ public class ApplicationUser {
 
     @Column(unique = true)
     private String username;
+
+    @OneToMany(mappedBy="applicationUser")
+    private List<Post> posts;
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
 
     @JsonIgnore
     private String password;
