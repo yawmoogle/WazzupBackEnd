@@ -5,7 +5,6 @@ import com.fdm.pod.pod.exception.UserDoesNotExistException;
 import com.fdm.pod.pod.model.ApplicationUser;
 import com.fdm.pod.pod.model.RegistrationForm;
 import com.fdm.pod.pod.service.UserService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

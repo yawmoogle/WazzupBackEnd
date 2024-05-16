@@ -1,6 +1,7 @@
 package com.fdm.pod.pod.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.fdm.pod.pod.model.Post;
 import com.fdm.pod.pod.exception.PostDoesNotExistException;
@@ -36,7 +37,12 @@ public class PostService {
         }
     }
 
-    public void deletePost(Long postId){
-        postRepository.deleteById(postId);
+    public boolean deletePost(Long postId){
+        Optional<Post> post = postRepository.findById(postId);
+        if (post.isPresent()){
+            postRepository.deleteById(postId);
+            return true;
+        }
+        return false;
     }
 }

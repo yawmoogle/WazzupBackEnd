@@ -53,14 +53,20 @@ public class PostController {
         return postService.getPostsByApplicationUser(applicationUser);
     }
 
-    @PostMapping("/{post-id}/edit")
+    @PostMapping("/edit")
     public Post post(@RequestBody Post post, @RequestParam Long postId){
         Post oldPost = postService.getPostById(postId);
+        oldPost.setUpdateTime(java.time.LocalDateTime.now().toString());
         return postService.savePost(oldPost);
     }
 
-    @DeleteMapping("/{post_id}")
-    public void deletePost(@PathVariable Long postId){
-        postService.deletePost(postId);
+    @DeleteMapping
+    public ResponseEntity<Void> deletePost(@RequestParam Long postId){
+        boolean deleted = postService.deletePost(postId);
+        if (deleted) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }    
 }
