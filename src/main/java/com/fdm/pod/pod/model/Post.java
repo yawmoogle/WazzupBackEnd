@@ -7,6 +7,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 
@@ -64,6 +67,7 @@ public class Post {
         this.content = content;
     }
 
+    @JsonIgnore
     public ApplicationUser getApplicationUser() {
         return applicationUser;
     }

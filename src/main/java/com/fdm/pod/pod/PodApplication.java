@@ -1,9 +1,7 @@
 package com.fdm.pod.pod;
 
-import com.fdm.pod.pod.model.ApplicationUser;
 import com.fdm.pod.pod.model.Role;
 import com.fdm.pod.pod.repository.RoleRepository;
-import com.fdm.pod.pod.repository.UserRepository;
 import com.fdm.pod.pod.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
