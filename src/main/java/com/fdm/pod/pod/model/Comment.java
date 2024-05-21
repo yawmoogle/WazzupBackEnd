@@ -23,6 +23,10 @@ public class Comment {
     @JoinColumn(name="post_id")
     private Post post;
 
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private ApplicationUser user;
+
     public Long getCommentId() {
         return postId;
     }
@@ -61,5 +65,13 @@ public class Comment {
 
     public void setPost(Post post) {
         this.post = post;
+    }
+
+    public ApplicationUser getUser() {
+        return user;
+    }
+
+    public void setUser(ApplicationUser user) {
+        this.user = user;
     }
 }
