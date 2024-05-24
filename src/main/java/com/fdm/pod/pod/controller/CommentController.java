@@ -52,7 +52,7 @@ public class CommentController {
             logger.error("Post not found: {}", postId);
             return ResponseEntity.badRequest().body(null);
         }
-        comment.setUser(user);
+        comment.setApplicationUser(user);
         comment.setPost(post);
         comment.setCreateTime(java.time.LocalDateTime.now().toString());
         Comment savedComment = commentService.saveComment(comment);
