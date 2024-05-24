@@ -25,7 +25,7 @@ public class Comment {
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user_id")
-    private ApplicationUser user;
+    private ApplicationUser applicationUser;
 
     public Long getCommentId() {
         return postId;
@@ -67,11 +67,11 @@ public class Comment {
         this.post = post;
     }
 
-    public ApplicationUser getUser() {
-        return user;
+    public ApplicationUser getApplicationUser() {
+        return applicationUser;
     }
 
-    public void setUser(ApplicationUser user) {
-        this.user = user;
+    public void setApplicationUser(ApplicationUser applicationUser) {
+        this.applicationUser = applicationUser;
     }
 }
